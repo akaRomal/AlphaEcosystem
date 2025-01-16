@@ -39,7 +39,7 @@ class HistoryScreenViewModel(
         }
     }
 
-    private fun deleteBin(numberBin: String){
+    private fun deleteBin(numberBin: String) {
         viewModelScope.launch(Dispatchers.IO) {
             deleteDinUseCase.execute(binDomain = BinDomain(number = numberBin))
         }

@@ -130,12 +130,12 @@ fun HistoryScreen(viewModel: HistoryScreenViewModel, navController: NavHostContr
                             modifier = Modifier
                                 .align(alignment = Alignment.End)
                                 .clickable(
-                                onClick = {
-                                    viewModel.handleEvent(
-                                        HistoryScreenEvent.CardDelete(number = cardInfo.cardNumber)
-                                    )
-                                }
-                            ),
+                                    onClick = {
+                                        viewModel.handleEvent(
+                                            HistoryScreenEvent.CardDelete(number = cardInfo.cardNumber)
+                                        )
+                                    }
+                                ),
                             color = Color.Blue
                         )
                     }

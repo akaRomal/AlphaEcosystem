@@ -29,9 +29,9 @@ fun openMap(context: Context, coordinates: Coordinates?) {
     }
 }
 
-fun navigateToScreen(navController: NavHostController, screen: NameNavScreen){
+fun navigateToScreen(navController: NavHostController, screen: NameNavScreen) {
     navController.navigate(screen.route) {
-        popUpTo(navController.graph.startDestinationId){
+        popUpTo(navController.graph.startDestinationId) {
             inclusive = true
         }
     }

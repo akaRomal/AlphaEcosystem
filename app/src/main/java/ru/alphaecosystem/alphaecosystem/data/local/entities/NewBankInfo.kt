@@ -29,4 +29,5 @@ data class NewBankInfo(
     @ColumnInfo(name = BANK_TEL)
     val bankTel: String,
     @ColumnInfo(name = BANK_CITY)
-    val bankCity: String,)
+    val bankCity: String,
+)

@@ -95,12 +95,17 @@ fun HomeScreen(viewModel: HomeScreenViewModel, navController: NavHostController)
                 }
 
                 Button(
-                    onClick = { navigateToScreen(navController = navController, screen = NameNavScreen.History) },
+                    onClick = {
+                        navigateToScreen(
+                            navController = navController,
+                            screen = NameNavScreen.History
+                        )
+                    },
                     modifier = Modifier
                         .padding(horizontal = 16.dp)
                         .padding(bottom = 16.dp),
 
-                ) {
+                    ) {
                     Text(text = stringResource(id = R.string.text_button_history))
                 }
 
