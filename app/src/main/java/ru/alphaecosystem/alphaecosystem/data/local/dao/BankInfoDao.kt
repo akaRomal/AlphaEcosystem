@@ -18,7 +18,7 @@ interface BankInfoDao {
         "SELECT * FROM ${BankInfoEntity.TABLE_NAME}" +
                 " WHERE ${BankInfoEntity.CARD_NUMBER} = :number LIMIT 1"
     )
-    fun findByNumber(number: String): BankInfoEntity
+    fun findByNumber(number: String): BankInfoEntity?
 
     @Query("DELETE FROM ${BankInfoEntity.TABLE_NAME} WHERE ${BankInfoEntity.CARD_NUMBER} = :number")
     fun delete(number: String)

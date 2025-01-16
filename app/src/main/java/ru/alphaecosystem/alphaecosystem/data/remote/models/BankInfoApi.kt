@@ -1,6 +1,6 @@
 package ru.alphaecosystem.alphaecosystem.data.remote.models
 
-data class BinInfoApi(
+data class BankInfoApi(
     val scheme: String?=null,
     val country: CountryApi?=null,
     val bank: BankApi?=null,

@@ -2,6 +2,7 @@ package ru.alphaecosystem.alphaecosystem.presentation.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -36,16 +37,17 @@ class HomeScreenViewModel(
     }
 
     private fun getBinInfo() {
-        viewModelScope.launch {
-            getBinInfoUseCase.execute(
+        viewModelScope.launch(Dispatchers.IO) {
+            val binInfoDomain = getBinInfoUseCase.execute(
                 binDomain = BinDomain(number = _uiState.value.cardNumber)
-            ).let { binInfoDomain ->
-                _uiState.value = _uiState.value.copy(
-                    binInfo = with(mapper) {
-                        fromBinInfoDomainToBinInfo(binInfoDomain)
+            )
+            _uiState.value = _uiState.value.copy(
+                binInfo = binInfoDomain?.let {
+                    with(mapper) {
+                        fromBinInfoDomainToBinInfo(it)
                     }
-                )
-            }
+                }
+            )
         }
     }
 }
