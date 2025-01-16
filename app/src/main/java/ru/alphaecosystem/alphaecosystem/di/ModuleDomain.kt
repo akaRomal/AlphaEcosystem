@@ -1,7 +1,8 @@
 package ru.alphaecosystem.alphaecosystem.di
 
 import org.koin.dsl.module
+import ru.alphaecosystem.alphaecosystem.domain.usecase.GetBinInfoUseCase
 
 val domainModule = module {
-//TODO
+    single<GetBinInfoUseCase> { GetBinInfoUseCase(repository = get()) }
 }

@@ -6,9 +6,16 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import ru.alphaecosystem.alphaecosystem.BuildConfig
 import ru.alphaecosystem.alphaecosystem.data.remote.BinApiService
+import ru.alphaecosystem.alphaecosystem.data.repository.Mapper
+import ru.alphaecosystem.alphaecosystem.data.repository.RepositoryImpl
+import ru.alphaecosystem.alphaecosystem.domain.interfaces.Repository
 import java.util.concurrent.TimeUnit
 
 val dataModule = module{
+
+    single<Repository>{ RepositoryImpl(binApiService = get(), mapper = get())}
+
+    single<Mapper> { Mapper() }
 
     single<BinApiService> { get<Retrofit>().create(BinApiService::class.java)  }
 
