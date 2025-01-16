@@ -1,6 +1,7 @@
 package ru.alphaecosystem.alphaecosystem.presentation.screens.history
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -16,6 +17,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
@@ -58,7 +60,7 @@ fun HistoryScreen(viewModel: HistoryScreenViewModel, navController: NavHostContr
 
         LazyColumn(
             modifier = Modifier
-                .padding(all = 12.dp)
+                .padding(horizontal = 12.dp)
                 .fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -123,6 +125,19 @@ fun HistoryScreen(viewModel: HistoryScreenViewModel, navController: NavHostContr
                             text = cardInfo.bankCity
                         )
 
+                        Text(
+                            text = stringResource(id = R.string.text_button_delete),
+                            modifier = Modifier
+                                .align(alignment = Alignment.End)
+                                .clickable(
+                                onClick = {
+                                    viewModel.handleEvent(
+                                        HistoryScreenEvent.CardDelete(number = cardInfo.cardNumber)
+                                    )
+                                }
+                            ),
+                            color = Color.Blue
+                        )
                     }
                 }
             }

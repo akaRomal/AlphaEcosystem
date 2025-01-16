@@ -9,6 +9,12 @@ import ru.alphaecosystem.alphaecosystem.presentation.screens.models.Mapper
 
 val presentationModule = module {
     viewModel { HomeScreenViewModel(getBinInfoUseCase = get(), mapper = get()) }
-    viewModel { HistoryScreenViewModel() }
+    viewModel {
+        HistoryScreenViewModel(
+            getAllBankInfoUseCase = get(),
+            deleteDinUseCase = get(),
+            mapper = get()
+        )
+    }
     single<Mapper> { Mapper() }
 }

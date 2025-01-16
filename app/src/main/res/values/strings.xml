@@ -13,4 +13,5 @@
     <string name="text_title_card_number">"BIN/IIN: "</string>
     <string name="text_button_history">История</string>
     <string name="description_icon_back">Назад</string>
+    <string name="text_button_delete">Удалить</string>
 </resources>
