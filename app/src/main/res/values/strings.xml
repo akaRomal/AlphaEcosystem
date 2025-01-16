@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Alpha Ecosystem</string>
+    <string name="text_label_number_card">Номер карты: </string>
+    <string name="text_button_search">Искать</string>
+    <string name="text_title_country">Страна: </string>
+    <string name="text_title_coordinates">Координаты: </string>
+    <string name="text_title_cardType">Тип карты: </string>
+    <string name="text_title_bankName">Название банка: </string>
+    <string name="text_title_bankUrl">Сайт: </string>
+    <string name="text_title_bankTel">Тел.: </string>
+    <string name="text_title_bankCity">Город: </string>
+    <string name="description_icon_clear">Очистить</string>
+    <string name="text_title_card_number">"BIN/IIN: "</string>
+    <string name="text_button_history">История</string>
+    <string name="description_icon_back">Назад</string>
 </resources>

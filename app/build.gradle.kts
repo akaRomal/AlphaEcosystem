@@ -19,6 +19,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField ("String", "ULR_API", "\"https://lookup.binlist.net/\"")
     }
 
     buildTypes {
@@ -39,6 +40,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
