@@ -32,7 +32,7 @@ class Mapper {
                 if (coord.latitude.isNotEmpty() && coord.longitude.isNotEmpty()) {
                     Coordinates(
                         latitude = coord.latitude,
-                        longitude = coord.latitude,
+                        longitude = coord.longitude,
                     )
                 } else {
                     null
